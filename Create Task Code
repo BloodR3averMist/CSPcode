@@ -1,0 +1,57 @@
+var a = 0;
+var b = 0;
+var c = 0;
+var solution1;
+var solution2;
+setProperty("dropdown1", "options", getColumn("Possible Numbers", "Numbers"));
+setProperty("dropdown2", "options", getColumn("Possible Numbers", "Numbers"));
+setProperty("dropdown3", "options", getColumn("Possible Numbers", "Numbers"));
+//this function right here uses the arguments inputed to the parameters and does the quadratic formula through the - outcome
+function quadMinus(a, b, c) {
+  var solution1; 
+  solution1 =(-b - Math.sqrt(b*b - (4*a*c)))/(2*a);
+  //The isNaN statement reads if the equation that would be used by the number
+  //imputs given can be used and if not, it says it cannot happen 
+  if (isNaN(solution1)){
+    //the while loop continuesously checks if the solution is NaN to be sure
+    while (isNaN(solution2)){
+      solution1 = "Sorry the number inputed cannot be used in the quadratic formula";
+      return (solution1);
+    }
+    }else{
+      return (solution1);
+    }
+  }
+//this function right here uses the arguments inputed to the parameters and does the quadratic formula through the + outcome
+function quadPlus(a, b, c) {
+  var solution2;
+  solution2 =(-b + Math.sqrt(b*b - (4*a*c)))/(2*a);
+  //The isNaN statement reads if the equation that would be used by the number
+  //imputs given can be used and if not, it says it cannot happen 
+    if (isNaN(solution2)){
+      //the while loop continuesously checks if the solution is NaN to be sure
+      while (isNaN(solution2)){
+      solution2 = "Sorry the number inputed cannot be used in the quadratic formula";
+      return (solution2);
+      }
+    }else{
+      return (solution2);
+  }
+}
+
+//the events that will grab the numbers inputed as arguments and send that information to the functions 
+onEvent("button1", "click", function( ){
+  setScreen("screen2");
+  a = getNumber("dropdown1");
+  b = getNumber("dropdown2");
+  c = getNumber("dropdown3");
+  solution1 = quadMinus(a,b,c);
+  solution2 = quadPlus(a,b,c);
+  setText("text_area1", solution1);
+  setText("text_area2", solution2);
+  });
+onEvent("button2", "click", function( ){
+  setScreen("screen1");
+});
+
+
