@@ -1,0 +1,48 @@
+//this is the first arrow you click to get to the next page
+onEvent("arrow1", "click", function(){
+  setScreen("whyTheyFormed");
+});
+//this is supposed to also lead you to the next page that i accidently named 3
+onEvent("arrow3", "click", function(){
+  setScreen("foundingMembers");
+});
+//same situation with arrow "3"
+  onEvent("arrow4","click", function(){
+    setProperty("foundersText","text","Click on the mask of the founding members");
+    setScreen("musicScreen");
+  });
+//takes you to the home page while also stopping music
+onEvent("homeButton" ,"click", function(){
+  setProperty("songText","text","Pick a song from the options by clicking the album cover");
+  setScreen("homeScreen");
+  stopSound();
+});
+//plays nero forte and also stops another 
+onEvent("nero_forte", "click", function(){
+  setProperty("songText","text", "You have picked Nero Forte");
+  stopSound();
+  playSound("Slipknot---Nero-Forte--OFFICIAL-VIDEO--(64-kbps).mp3");
+});
+//plays devil&i song and stops another music
+onEvent("devil&i","click", function(){
+  setProperty("songText","text","You have picked Devil & I");
+  stopSound();
+  playSound("Slipknot---The-Devil-in-I-(Lyrics)-(64-kbps).mp3");
+});
+//same thing with the other 2 music choices
+onEvent("pulseofmaggot","click",function(){
+  setProperty("songText","text","You have picked Pulse of the Maggots");
+  stopSound();
+  playSound("Slipknot---Pulse-of-the-Maggots-(Audio)-(64-kbps).mp3");
+});
+//the 3 different types of code down here just pull up the summary
+//of the 3 founding members 
+onEvent("clown","click",function(){
+  setProperty("foundersText","text","Michael Shawn Crahan (born September 24, 1969), more commonly known by his stage persona Clown, is an American musician who is one of the two percussionists/background vocalists and co-founder of heavy metal band Slipknot.");
+});
+onEvent("paul","click", function(){
+  setProperty("foundersText","text","Paul Dedrick Gray was born in Los Angeles, California. He played guitar but switched to bass after he relocated to Iowa. In his youth, Gray performed in bands such as Anal Blast, Vexx, Body Pit, The Have Nots and Inveigh Catharsis. At the time of his death (May 24 2010), he was one of three original members of Slipknot remaining in the band");
+});
+onEvent("kabuki", "click", function(){
+  setProperty("foundersText","text","Jordison grew up in Des Moines, Iowa, with his parents and two sisters, and was given his first drum kit at the age of 8. He performed with many bands early in his career; then in the summer of 1995, he joined the group The Pale Ones, which would later change their name to Slipknot. Joey Jordison passed away on Jul 26, 2021.");  
+});
